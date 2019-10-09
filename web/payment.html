@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CoffeeRun - Payment</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"
+    />
+  </head>
+  <body class="container">
+    <header>
+      <h1>CoffeeRun - Payment</h1>
+    </header>
+    <section>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form data-coffee-order="form" class="form-horizontal">
+            <p class="text-danger">
+              Required fields are followed by
+              <strong><abbr title="required">*</abbr></strong
+              >.
+            </p>
+            <section>
+              <h2>Contact information</h2>
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Title:</label>
+                <div class="col-sm-10">
+                  <div class="col-xs-6">
+                    <label>
+                      <input
+                        type="radio"
+                        id="title_1"
+                        name="title"
+                        value="Mister"
+                      />
+                      Mister
+                    </label>
+                  </div>
+                  <div class="col-xs-6">
+                    <label>
+                      <input
+                        type="radio"
+                        id="title_2"
+                        name="title"
+                        value="Miss"
+                      />
+                      Miss
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">
+                  Name:
+                  <strong class="text-danger">
+                    <abbr title="required">*</abbr>
+                  </strong>
+                </label>
+                <div class="col-sm-10">
+                  <input class="form-control" name="name" id="name" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">
+                  Email:
+                  <strong class="text-danger">
+                    <abbr title="required">*</abbr>
+                  </strong>
+                </label>
+                <div class="col-sm-10">
+                  <input
+                    class="form-control"
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="me@mail.com"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="pass" class="col-sm-2 control-label">
+                  Password:
+                  <strong class="text-danger">
+                    <abbr title="required">*</abbr>
+                  </strong>
+                </label>
+                <div class="col-sm-10">
+                  <input
+                    class="form-control"
+                    type="password"
+                    name="pass"
+                    id="pass"
+                  />
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2>Payment information</h2>
+              <div class="form-group">
+                <label for="usercard" class="col-sm-2 control-label">
+                  Card type:
+                </label>
+                <div class="col-sm-10">
+                  <select id="flavorShot" class="form-control" name="usercard">
+                    <option value="visa">Visa</option>
+                    <option value="mc">Mastercard</option>
+                    <option value="amex">American Express</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="cardnumber" class="col-sm-2 control-label">
+                  Card number:
+                  <strong class="text-danger">
+                    <abbr title="required">*</abbr>
+                  </strong>
+                </label>
+                <div class="col-sm-10">
+                  <input
+                    class="form-control"
+                    name="cardnumber"
+                    id="cardnumber"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="cardnumber" class="col-sm-2 control-label">
+                  Expiration date:
+                  <strong class="text-danger">
+                    <abbr title="required">*</abbr> </strong
+                  ><br />
+                  <small class="text-muted"><em>formatted as mm/yy</em></small>
+                </label>
+                <div class="col-sm-10">
+                  <input
+                    class="form-control"
+                    type="date"
+                    id="date"
+                    name="expiration"
+                    data-date-format="mm/yy"
+                  />
+                </div>
+              </div>
+            </section>
+            <section class="row">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-default">
+                  Validate the payment
+                </button>
+              </div>
+            </section>
+          </form>
+        </div>
+      </div>
+    </section>
+    <div id="thankUMSG" class="modal">
+      <p>
+        Thank you for your payment,
+        <span id="titleHolder">Captain</span>
+        <span id="nameHolder">James T. Kirk</span>
+      </p>
+      <a href="#" rel="modal:close">Close</a>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"
+      charset="utf-8"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="scripts/formhandler.js" charset="utf-8"></script>
+    <script src="scripts/payment_main.js" charset="utf-8"></script>
+  </body>
+</html>
