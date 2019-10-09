@@ -1,10 +1,11 @@
 (function(window) {
   "use strict";
-  var FORM_SELECTOR = '[data-coffee-order="form"]';
-  var CHECKLIST_SELECTOR = '[data-coffee-order="checklist"]';
+  var FORM_SELECTOR = "[data-coffee-order=\"form\"]";
+  var CHECKLIST_SELECTOR = "[data-coffee-order=\"checklist\"]";
   var SERVER_URL = "http://localhost:2403/coffeeorders";
   var App = window.App;
   var Truck = App.Truck;
+  //eslint-disable-next-line
   var DataStore = App.DataStore;
   var RemoteDataStore = App.RemoteDataStore;
   var FormHandler = App.FormHandler;
@@ -23,7 +24,8 @@
   });
 
   formHandler.addInputHandler(Validation.isCompanyEmail);
-
+  
+  //eslint-disable-next-line no-console
   console.log(formHandler);
 
   remoteDS.getAll(function(data) {

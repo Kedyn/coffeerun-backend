@@ -4,6 +4,7 @@
   var App = window.App || {};
 
   function DataStore() {
+    //eslint-disable-next-line no-console
     console.log("running the DataStore function");
     this.data = {};
   }
